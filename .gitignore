@@ -1,0 +1,6 @@
+bin/
+*.class
+out/
+target/
+.DS_Store
+Thumbs.db
