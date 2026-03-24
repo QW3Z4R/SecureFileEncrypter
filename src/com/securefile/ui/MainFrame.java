@@ -668,7 +668,7 @@ public final class MainFrame extends JFrame {
             button.setBackground(new Color(8, 62, 80));
             button.setFont(new Font("SansSerif", Font.BOLD, 12));
             button.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(165, 226, 240, 220), 1, true),
+                    BorderFactory.createLineBorder(new Color(165, 226, 240, 220), 1, true),
                     BorderFactory.createEmptyBorder(9, 16, 9, 16)));
             return button;
         }
@@ -681,8 +681,8 @@ public final class MainFrame extends JFrame {
 
     private final class AnimatedBackgroundPanel extends JPanel {
 
-		private static final long serialVersionUID = 1L;
-		private float phase;
+        private static final long serialVersionUID = 1L;
+        private float phase;
 
         private AnimatedBackgroundPanel() {
             setOpaque(true);
@@ -731,9 +731,8 @@ public final class MainFrame extends JFrame {
 
     private static final class GlassPanel extends JPanel {
 
-
-		private static final long serialVersionUID = 1L;
-		private final int arc;
+        private static final long serialVersionUID = 1L;
+        private final int arc;
 
         private GlassPanel(BorderLayout layout, int arc) {
             super(layout);

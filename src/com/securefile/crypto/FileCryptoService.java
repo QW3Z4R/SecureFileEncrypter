@@ -60,7 +60,7 @@ public final class FileCryptoService {
     }
 
     public void decryptFile(Path inputFile, Path outputFile, char[] password) throws IOException, GeneralSecurityException {
-        Path validatedInput = InputValidator.validateInputFile(inputFile);
+        Path validatedInput = InputValidator.validateEncryptedInputFile(inputFile);
         Path validatedOutput = InputValidator.validateOutputFile(validatedInput, outputFile);
         InputValidator.validatePassword(password, false);
 

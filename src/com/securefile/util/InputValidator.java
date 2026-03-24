@@ -5,6 +5,8 @@ import java.nio.file.Path;
 
 public final class InputValidator {
 
+    private static final String ENCRYPTED_FILE_EXTENSION = ".sfe";
+
     private InputValidator() {}
 
     public static Path validateInputFile(Path inputFile) {
@@ -21,6 +23,15 @@ public final class InputValidator {
         }
         if (!Files.isReadable(normalized)) {
             throw new IllegalArgumentException("The selected input file cannot be read.");
+        }
+        return normalized;
+    }
+
+    public static Path validateEncryptedInputFile(Path inputFile) {
+        Path normalized = validateInputFile(inputFile);
+        String fileName = normalized.getFileName() == null ? "" : normalized.getFileName().toString();
+        if (!fileName.toLowerCase().endsWith(ENCRYPTED_FILE_EXTENSION)) {
+            throw new IllegalArgumentException("Select a .sfe encrypted input file for decryption.");
         }
         return normalized;
     }
